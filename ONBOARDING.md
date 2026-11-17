@@ -1,6 +1,6 @@
 # Onboarding
 
-In Codex, say **“Clone this repository”** and paste its GitHub URL. After opening the checkout, say **“onboarding.”** The first question is **Railway or localhost?** Codex prepares only the selected host, then walks you through the credentials and asks for two media paths.
+In Codex, say **“Clone this repository”** and paste its GitHub URL. After opening the checkout, say **“onboarding.”** The first question is **Railway or localhost?** Codex prepares the selected host, walks you through the credentials, and asks for the intro and disclaimer path.
 
 ## 1. Pick where the bot runs
 
@@ -20,14 +20,14 @@ Both hosts use the same writer, motion model, review, voice clone and editor. Th
 
 Use the ignored `.env` locally or Railway Variables. When asking Codex for a setup check, say which step is done and keep the credential values in those settings.
 
-## 3. Give Codex your media paths
+## 3. Install the intro and shared narrator
 
 - Provide the path to your **combined intro and disclaimer video** (at least six seconds). If they’re two files, tell Codex their order so it can join them first. The editor prepends the result to every story.
-- Provide the path to a **6–30-second narrator-only sample** you’re authorized to use. For the same narrator on both hosts, use the same sample, including for the approved Web 6 voice if you have that file. Use speech with minimal music or other voices. The clone applies to narration; characters keep their own dialogue voices.
+- Use the instructor-provided **`web-6-narrator-reference.wav`** on every installation. If it is missing, get it from the course materials before testing. The bot clones that voice to read each new Hindi script. Character dialogue uses its own voices.
 - On **localhost**, Codex can install them with `python -m app.install_assets opening "PATH_TO_INTRO"` and `python -m app.install_assets narrator "PATH_TO_NARRATOR"`.
 - On **Railway**, use the service’s SSH connection to stream each file to the same installer on its volume. In a shell with binary-safe stdin redirection, use `ssh -T SERVICE_SSH_DESTINATION "cd /app && python -m app.install_assets opening -" < intro.mp4` and the equivalent `narrator -` command for the audio. Use the destination and SSH key from your own service. On Windows, Codex can pass file bytes to the SSH subprocess directly. [Railway SSH](https://docs.railway.com/cli/ssh)
 
-Voice cloning is enabled in the template. The setup asks for the sample so it can keep the narrator consistent across installs.
+Voice cloning is enabled in the template. Keep the same course reference on localhost and Railway.
 
 ## 4. Check it from your phone
 

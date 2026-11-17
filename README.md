@@ -6,7 +6,7 @@ Send a title or tap **Generate** in Telegram. Choose 2, 5, or 10 minutes, or ent
 
 1. Clone this repository and open the folder in Codex.
 2. Say **onboarding**. Choose **Railway** or **localhost**.
-3. Follow the [step-by-step onboarding guide](ONBOARDING.md) and use the [environment template](.env.raghu.example). Install your intro, disclaimer and narrator sample privately.
+3. Follow the [step-by-step onboarding guide](ONBOARDING.md) and use the [environment template](.env.raghu.example). Install your intro and disclaimer, then install the shared Web 6 narrator file from the course materials.
 
 Both hosts run the same production code and use a rented Vast GPU. Use `/setup` before your first run and `/status` to recover a paused job.
 
