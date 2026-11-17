@@ -1,0 +1,9 @@
+# Telegram horror video automation
+
+Treat "onboarding" as a request to set up this checkout. Read [ONBOARDING.md](ONBOARDING.md). Ask whether to use Railway or localhost before making setup changes. Use the user’s answer to follow the matching steps. Request paths for the combined intro/disclaimer and the narrator-only reference. Ask the user to enter credentials in their local .env or Railway Variables. Keep credential values and private assets out of Git.
+
+Both hosts run the same DeepSeek, Gemini, Vast, FLUX, LTX, and Chatterbox workflow. Keep the approved single-opening-image motion setup and FP8 settings. Run configuration and review checks before spending on generation. Start a paid test only when requested.
+
+Keep saved checkpoints and retry only failed assets. Preserve an unfinished production’s Vast disk on failure. Report unavailable services, invalid credentials, exhausted budgets, and failed quality checks accurately.
+
+Run `python -m pytest -q` and `python -m compileall -q app` after code changes.

@@ -1,0 +1,13 @@
+# Telegram Horror Video Automation
+
+Send a title or tap **Generate** in Telegram. Choose 2, 5, or 10 minutes, or enter a custom duration. The bot plans a complete Hindi story, creates illustrated scenes on Vast, reviews the motion, clones the narrator from your sample, and delivers the edited video in Telegram.
+
+## Get started
+
+1. Clone this repository and open the folder in Codex.
+2. Say **onboarding**. Choose **Railway** or **localhost**.
+3. Follow the [step-by-step onboarding guide](ONBOARDING.md) and use the [environment template](.env.raghu.example). Install your intro, disclaimer and narrator sample privately.
+
+Both hosts run the same production code and use a rented Vast GPU. Use `/setup` before your first run and `/status` to recover a paused job.
+
+[Setup and recovery reference](docs/raghu-railway.md)

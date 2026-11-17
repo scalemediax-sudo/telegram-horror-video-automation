@@ -1,0 +1,182 @@
+[
+  {
+    "title": "बंद कुएँ की आवाज़",
+    "script": "बीस साल से कुआँ पत्थर से बंद था। आज आवाज़ उसके ढक्कन के ऊपर से आई।\nबहन, एक घूँट। इस बार यहीं रख देना।\nरेखा मुड़ी। बारिश में सिर्फ़ उसके अपने पैरों के निशान थे।\nउसने चूड़ियाँ पहचान लीं। ये सीता की थीं, जो सूखे के साल मर गई थी।\nगाँव वालों ने तब सीता को पानी नहीं दिया था। कुएँ पर पहरा बैठा था।\nरेखा ने लोटा रखा। पानी अपने आप पत्थर की दरार में खिंचने लगा।\nढक्कन पर रखो। नीचे वो अभी भी पहरा देता है।\nरेखा ने लोटा सरकाकर बीच में कर दिया। पानी वहीं थम गया।\nसीता ने पहला घूँट लिया। उसकी चूड़ियाँ पत्थर पर गिर गईं।\nरेखा ने आँख झपकी। चौपाल खाली थी। लोटा फिर पूरा भरा था।\nवह लोटा लेकर घर मुड़ी। पीछे पत्थर ज़रा भी नहीं हिला।\nतभी लोटे के पानी से भारी आवाज़ उठी। अब पहरेदार को भी पिला दो।",
+    "scenes": [
+      {
+        "first_frame_description": "Rekha enters the edge of an empty courtyard holding a small round brass lota, an Indian water vessel, sealed lid fully visible.",
+        "visual_action": "She stops and looks toward the top of the lid.",
+        "camera": "Locked wide",
+        "effects": "Rain, lid stays fixed",
+        "sound_design": "Rain and a faint breath"
+      },
+      {
+        "first_frame_description": "Sita sits on the rim beside the lid, three-quarter face and both hands visible.",
+        "visual_action": "Sita speaks once, points to the lid and lowers her hand.",
+        "camera": "Eye-level medium close",
+        "effects": "Water drips from sari hem",
+        "sound_design": "Rain and exact dialogue"
+      },
+      {
+        "first_frame_description": "Rekha stands at lane mouth, a single trail of sandal prints leading to her.",
+        "visual_action": "She scans the lane. Her hand tightens around the cup.",
+        "camera": "Slow tilt to prints",
+        "effects": "Existing prints fill with rain",
+        "sound_design": "Rain on mud"
+      },
+      {
+        "first_frame_description": "Sita’s right wrist rests at her side, two copper bangles above the wet rim.",
+        "visual_action": "One bangle slips toward her hand, then settles.",
+        "camera": "Locked wrist insert",
+        "effects": "Small bead of water rolls off bangle",
+        "sound_design": "One quiet copper click"
+      },
+      {
+        "first_frame_description": "Rekha stands by the lane, Sita sits on the far edge of the sealed well.",
+        "visual_action": "Rekha looks from Sita to the cup and takes one small step forward.",
+        "camera": "Static wide",
+        "effects": "Rain stays steady",
+        "sound_design": "Rain and Rekha’s sandal step"
+      },
+      {
+        "first_frame_description": "Rekha’s hand holds a full brass cup a finger-width above the lid beside the rim seam.",
+        "visual_action": "She sets it down. A thin water thread climbs over its lip and runs into the seam.",
+        "camera": "Locked close-up",
+        "effects": "One distinct thread of water, no moving lid",
+        "sound_design": "Cup contacts stone, tiny trickle"
+      },
+      {
+        "first_frame_description": "Sita sits at the rim with her face and warning hand visible.",
+        "visual_action": "She says the line once, glances at the seam and draws back her fingers.",
+        "camera": "Locked face close",
+        "effects": "A drip falls past her wrist",
+        "sound_design": "Exact dialogue over soft rain"
+      },
+      {
+        "first_frame_description": "Brass cup by the rim, Rekha’s hand poised behind it, flat centre visible.",
+        "visual_action": "She slides the cup toward the centre; the trickle breaks at once.",
+        "camera": "Overhead insert",
+        "effects": "Water strand separates cleanly",
+        "sound_design": "Brass scrape and sudden quiet"
+      },
+      {
+        "first_frame_description": "Sita holds the cup just below her lips, bangles loose at her right wrist.",
+        "visual_action": "She takes one sip. Her wrist drops and the bangles fall together.",
+        "camera": "Static close-up",
+        "effects": "Bangles bounce once",
+        "sound_design": "Small sip and two copper taps"
+      },
+      {
+        "first_frame_description": "Rekha alone by the lid, the full brass cup and fallen bangles at its centre.",
+        "visual_action": "Rekha blinks, then leans cautiously toward the cup.",
+        "camera": "Small push toward the cup",
+        "effects": "Still water despite surrounding rain",
+        "sound_design": "Rain falls back into foreground"
+      },
+      {
+        "first_frame_description": "Rekha faces the lane carrying the full cup, edge of sealed well behind.",
+        "visual_action": "She walks two steps into the lane. The lid stays in place.",
+        "camera": "Locked medium-wide",
+        "effects": "Gentle sway of scarf",
+        "sound_design": "Two receding sandal steps"
+      },
+      {
+        "first_frame_description": "Close view of the cup in Rekha’s hand at waist height, surface flat.",
+        "visual_action": "Ripples spread from the centre. Rekha’s hand freezes; cut on the widening rings.",
+        "camera": "Locked insert",
+        "effects": "Three small concentric ripples from within cup",
+        "sound_design": "Low water vibration; narrator performs the quoted words separately"
+      }
+    ]
+  },
+  {
+    "title": "खाली कमरे की चाबी",
+    "script": "मीना ने चाबी घुमाई। ताला बाहर था, लेकिन चाबी किसी ने अंदर से खींच ली।\nकमरा खुला। भीतर सामान नहीं था। बस दीवार की कील पर वही चाबी टँगी थी।\nबेटी, उसे मत उतारना। मैं भी यही भूल कर बैठा था।\nमीना की उँगलियाँ चाबी पर थीं। उसने पलटकर देखा, और दरवाज़ा बंद हो गया।\nअब वहाँ दरवाज़ा नहीं था। बस नीले रंग का चौकोर निशान था।\nहरि कमरे के कोने में खड़ा था। उसकी हथेली में भी चाबी का निशान था।\nजिसके हाथ में चाबी रहेगी, कमरा उसी को रख लेगा।\nमीना ने हाथ खोला। चाबी गरम थी। उसके ऊपर कील अब भी खाली थी।\nकमरे की चाबी, कमरे में।\nनीले निशान में दरार खुली। हरि ने मीना को जाने दिया। वह खुद वहीं खड़ा रहा।\nमीना सीढ़ियों तक पहुँची। पीछे दरवाज़ा बंद हुआ। उसने सोचा, बच गई।\nफिर उसके बैग की जेब में पीतल खनका। कमरे ने चाबी फिर भेज दी थी।",
+    "scenes": [
+      {
+        "first_frame_description": "Meena’s fingers on a plain brass key seated in the outside lock.",
+        "visual_action": "She turns once. The key slides inward and out of sight. Her fingers close on air.",
+        "camera": "Locked extreme close-up",
+        "effects": "Chipped paint and lock stay fixed",
+        "sound_design": "Lock scrape and metallic slide"
+      },
+      {
+        "first_frame_description": "View from threshold, blue door ajar, Meena at edge and brass key on wall hook.",
+        "visual_action": "She pushes the door open a little farther and follows the bare wall to the key.",
+        "camera": "Small pan from empty floor to hook",
+        "effects": "Settling dust at threshold",
+        "sound_design": "Hinge creak"
+      },
+      {
+        "first_frame_description": "Hari in three-quarter profile under the hall lamp, looking toward the open doorway.",
+        "visual_action": "He delivers the line once, visibly anxious, then closes his mouth.",
+        "camera": "Locked medium close-up",
+        "effects": "Soft rain behind the hall window",
+        "sound_design": "Exact dialogue, quiet rain"
+      },
+      {
+        "first_frame_description": "Meena’s fingers hold the key against the hook, blue door still ajar.",
+        "visual_action": "Her fingers lift the key as she looks back. The door swings fully shut.",
+        "camera": "Medium close, key and door visible",
+        "effects": "Door closes once; shadows remain consistent",
+        "sound_design": "Small click followed by wood thud"
+      },
+      {
+        "first_frame_description": "Meena faces a solid wall with a blue rectangular stain where the door stood.",
+        "visual_action": "She runs her free hand across the wall and finds no gap.",
+        "camera": "Slow side push",
+        "effects": "Fine plaster dust under fingertips",
+        "sound_design": "Palm rub on plaster"
+      },
+      {
+        "first_frame_description": "Hari in the far corner with palm open, Meena at left in profile, blue stain behind.",
+        "visual_action": "Hari raises his open hand into the window light. Meena watches.",
+        "camera": "Move from Meena’s eyeline to his palm",
+        "effects": "Key-shaped old indent, no wound or gore",
+        "sound_design": "Rain through narrow window"
+      },
+      {
+        "first_frame_description": "Hari at right with mouth visible. Meena listens at left, holding the key down.",
+        "visual_action": "Hari says the line once and looks toward her hand. Meena stays silent.",
+        "camera": "Two-shot with Hari in near profile",
+        "effects": "Lamp reflection steady",
+        "sound_design": "Exact dialogue, low room tone"
+      },
+      {
+        "first_frame_description": "Open palm with key under the empty hook. Blue stain at the frame edge.",
+        "visual_action": "She slowly raises the key by its ring toward the hook.",
+        "camera": "Locked insert",
+        "effects": "One soft glint on brass",
+        "sound_design": "Clothing rustle"
+      },
+      {
+        "first_frame_description": "Meena in profile beside the hook, key ring level with it.",
+        "visual_action": "She says the line and sets the ring on the hook. Her fingertips withdraw.",
+        "camera": "Static profile close-up showing mouth and hook",
+        "effects": "Key swings briefly and settles",
+        "sound_design": "Exact dialogue and soft brass tap"
+      },
+      {
+        "first_frame_description": "Blue rectangle has begun to open by a finger-width. Hari stands back from it.",
+        "visual_action": "Door swings inward; Meena crosses threshold. Hari watches with hands at his sides.",
+        "camera": "Locked wide",
+        "effects": "Amber hall light spreads across floor",
+        "sound_design": "Hinge creak and one step"
+      },
+      {
+        "first_frame_description": "Meena at the head of the stairs, breathing hard, blue door ajar behind.",
+        "visual_action": "The door shuts. She touches the stair rail and exhales.",
+        "camera": "Static medium-wide",
+        "effects": "Hall bulb remains steady",
+        "sound_design": "Wood click and breath out"
+      },
+      {
+        "first_frame_description": "Close on zipped outer pocket of Meena’s canvas bag, hand hovering above it.",
+        "visual_action": "A key-shaped weight drops inside the fabric from nowhere. Meena pulls her hand back. Cut.",
+        "camera": "Locked pocket insert",
+        "effects": "Brief fabric twitch and stillness",
+        "sound_design": "One recognizable brass clink, then quiet"
+      }
+    ]
+  }
+]

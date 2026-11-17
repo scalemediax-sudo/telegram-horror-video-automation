@@ -1,0 +1,164 @@
+[
+  {
+    "project_id": "band-kuen-ki-aawaz-writing-comparison",
+    "source_sha256": "d4f7479bb249aa86fb50613d8e2b1704c16efa4bd2ce756ba793e81e31a0ce3b",
+    "shots": [
+      {
+        "scene_number": 1,
+        "background_tag": "#BGD-01-WELL-WIDE",
+        "character_tags": [
+          "@CHAR-01-REKHA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "बीस साल से कुआँ पत्थर से बंद था। आज आवाज़ उसके ढक्कन के ऊपर से आई।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Rekha enters the edge of an empty courtyard holding a small round brass lota, an Indian water vessel, sealed lid fully visible.",
+        "visual_action": "She stops and looks toward the top of the lid.",
+        "camera": "Locked wide",
+        "effects": "Rain, lid stays fixed",
+        "sound_design": "Rain and a faint breath"
+      },
+      {
+        "scene_number": 6,
+        "background_tag": "#BGD-02-WELL-LID",
+        "character_tags": [
+          "@CHAR-01-REKHA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "रेखा ने लोटा रखा। पानी अपने आप पत्थर की दरार में खिंचने लगा।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Rekha’s hand holds a full brass cup a finger-width above the lid beside the rim seam.",
+        "visual_action": "She sets it down. A thin water thread climbs over its lip and runs into the seam.",
+        "camera": "Locked close-up",
+        "effects": "One distinct thread of water, no moving lid",
+        "sound_design": "Cup contacts stone, tiny trickle"
+      },
+      {
+        "scene_number": 7,
+        "background_tag": "#BGD-02-WELL-LID",
+        "character_tags": [
+          "@CHAR-02-SITA"
+        ],
+        "speaker": "@CHAR-02-SITA",
+        "narration_text": "",
+        "devanagari_dialogue": "ढक्कन पर रखो। नीचे वो अभी भी पहरा देता है।",
+        "first_frame_description": "Sita sits at the rim with her face and warning hand visible.",
+        "visual_action": "She says the line once, glances at the seam and draws back her fingers.",
+        "camera": "Locked face close",
+        "effects": "A drip falls past her wrist",
+        "sound_design": "Exact dialogue over soft rain"
+      },
+      {
+        "scene_number": 8,
+        "background_tag": "#BGD-02-WELL-LID",
+        "character_tags": [
+          "@CHAR-01-REKHA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "रेखा ने लोटा सरकाकर बीच में कर दिया। पानी वहीं थम गया।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Brass cup by the rim, Rekha’s hand poised behind it, flat centre visible.",
+        "visual_action": "She slides the cup toward the centre; the trickle breaks at once.",
+        "camera": "Overhead insert",
+        "effects": "Water strand separates cleanly",
+        "sound_design": "Brass scrape and sudden quiet"
+      },
+      {
+        "scene_number": 12,
+        "background_tag": "#BGD-03-WELL-LANE",
+        "character_tags": [
+          "@CHAR-01-REKHA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "तभी लोटे के पानी से भारी आवाज़ उठी। अब पहरेदार को भी पिला दो।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Close view of the cup in Rekha’s hand at waist height, surface flat.",
+        "visual_action": "Ripples spread from the centre. Rekha’s hand freezes; cut on the widening rings.",
+        "camera": "Locked insert",
+        "effects": "Three small concentric ripples from within cup",
+        "sound_design": "Low water vibration; narrator performs the quoted words separately"
+      }
+    ]
+  },
+  {
+    "project_id": "khaali-kamre-ki-chaabi-writing-comparison",
+    "source_sha256": "d186b2d8cca26372483033b860b72256728e19960e8df8920e3ff9349466a4f9",
+    "shots": [
+      {
+        "scene_number": 1,
+        "background_tag": "#BGD-02-DOOR-CLOSE",
+        "character_tags": [
+          "@CHAR-01-MEENA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "मीना ने चाबी घुमाई। ताला बाहर था, लेकिन चाबी किसी ने अंदर से खींच ली।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Meena’s fingers on a plain brass key seated in the outside lock.",
+        "visual_action": "She turns once. The key slides inward and out of sight. Her fingers close on air.",
+        "camera": "Locked extreme close-up",
+        "effects": "Chipped paint and lock stay fixed",
+        "sound_design": "Lock scrape and metallic slide"
+      },
+      {
+        "scene_number": 3,
+        "background_tag": "#BGD-01-LODGE-HALL",
+        "character_tags": [
+          "@CHAR-02-HARI"
+        ],
+        "speaker": "@CHAR-02-HARI",
+        "narration_text": "",
+        "devanagari_dialogue": "बेटी, उसे मत उतारना। मैं भी यही भूल कर बैठा था।",
+        "first_frame_description": "Hari in three-quarter profile under the hall lamp, looking toward the open doorway.",
+        "visual_action": "He delivers the line once, visibly anxious, then closes his mouth.",
+        "camera": "Locked medium close-up",
+        "effects": "Soft rain behind the hall window",
+        "sound_design": "Exact dialogue, quiet rain"
+      },
+      {
+        "scene_number": 4,
+        "background_tag": "#BGD-04-EMPTY-ROOM-HOOK",
+        "character_tags": [
+          "@CHAR-01-MEENA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "मीना की उँगलियाँ चाबी पर थीं। उसने पलटकर देखा, और दरवाज़ा बंद हो गया।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Meena’s fingers hold the key against the hook, blue door still ajar.",
+        "visual_action": "Her fingers lift the key as she looks back. The door swings fully shut.",
+        "camera": "Medium close, key and door visible",
+        "effects": "Door closes once; shadows remain consistent",
+        "sound_design": "Small click followed by wood thud"
+      },
+      {
+        "scene_number": 5,
+        "background_tag": "#BGD-03-EMPTY-ROOM-WIDE",
+        "character_tags": [
+          "@CHAR-01-MEENA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "अब वहाँ दरवाज़ा नहीं था। बस नीले रंग का चौकोर निशान था।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Meena faces a solid wall with a blue rectangular stain where the door stood.",
+        "visual_action": "She runs her free hand across the wall and finds no gap.",
+        "camera": "Slow side push",
+        "effects": "Fine plaster dust under fingertips",
+        "sound_design": "Palm rub on plaster"
+      },
+      {
+        "scene_number": 12,
+        "background_tag": "#BGD-01-LODGE-HALL",
+        "character_tags": [
+          "@CHAR-01-MEENA"
+        ],
+        "speaker": "NARRATOR",
+        "narration_text": "फिर उसके बैग की जेब में पीतल खनका। कमरे ने चाबी फिर भेज दी थी।",
+        "devanagari_dialogue": "",
+        "first_frame_description": "Close on zipped outer pocket of Meena’s canvas bag, hand hovering above it.",
+        "visual_action": "A key-shaped weight drops inside the fabric from nowhere. Meena pulls her hand back. Cut.",
+        "camera": "Locked pocket insert",
+        "effects": "Brief fabric twitch and stillness",
+        "sound_design": "One recognizable brass clink, then quiet"
+      }
+    ]
+  }
+]
