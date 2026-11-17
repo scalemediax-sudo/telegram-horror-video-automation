@@ -31,12 +31,11 @@ RAGHU_MOTION_MODEL=ltx
 RAGHU_LTX_END_FRAME=false
 RAGHU_QUANTIZATION=fp8
 RAGHU_TARGET_SECONDS=600
-RAGHU_MAX_RENTAL_MINUTES=150
 RAGHU_MAX_HOURLY_USD=0.77
 RAGHU_MAX_JOB_USD=2.00
 ```
 
-Use a dedicated SSH key and paste its full private-key text into Railway. The Hugging Face read token must have access to the pinned LTX-2.5 weights. Select a Gemini model with image input and JSON output that is enabled on your API key. The Vast spend limit screens offers using the estimated rent and transfer cost and sets a runtime deadline. Vast's final invoice can vary. Use a short target such as 30 seconds for a first end-to-end integration test.
+Use a dedicated SSH key and paste its full private-key text into Railway. The Hugging Face read token must have access to the pinned LTX-2.5 weights. Select a Gemini model with image input and JSON output that is enabled on your API key. The Vast job estimate screens offers using the estimated rent and transfer cost. Production can continue past that estimate, and the final invoice can exceed it. Use a short target such as 30 seconds for a first end-to-end integration test.
 
 ## SSH from both installations
 
@@ -53,7 +52,7 @@ The worker checks stills, shot continuity, and rendered motion. It checks every 
 1. Run `/setup` to check required settings and tools without renting a GPU. Use `/raghu_review_check` to exercise the review API without a GPU.
 2. Use `/status` to see the last error and the available recovery buttons. **Retry this step** resumes the same job using saved scripts, images, and clips. For exhausted asset retakes, it opens another bounded round. A saved clip awaiting its first review is checked before the GPU starts. **Start new video** requests a duration for a separate production.
 3. If a new rental fails to establish SSH because its endpoint is unreachable, the worker verifies that contract has stopped before trying another eligible host within budget. If a previously working host cannot restart, retry when capacity returns. Check the existing contract in Vast before abandoning it. A stopped contract can still accrue disk charges.
-4. Credentials, access or credit errors need a fix in the provider account or deployment settings. Resolve the error before retrying the same job. For a deadline or budget error, check the rental limits against the remaining work. Retry preserves those limits. If Telegram itself is offline, check the local process or Railway logs and the bot token, then use `/status` again.
+4. Credentials, access or credit errors need a fix in the provider account or deployment settings. Resolve the error before retrying the same job. For an operation timeout, check which step stopped responding. For a budget error, check the offer estimate against the remaining work. If Telegram itself is offline, check the local process or Railway logs and the bot token, then use `/status` again.
 
 If Gemini stays unavailable after its request retries, the worker stops the current Vast instance and preserves its disk. After Vast confirms the stop, the worker checks saved assets again at 15-second intervals between attempts, up to three recovery checks. It restarts the same GPU only after reviews respond and remaining work still needs it. An ongoing outage leaves the instance stopped and the job available for a later Telegram retry.
 

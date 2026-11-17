@@ -50,7 +50,7 @@ FLAT_STYLE = ("Every frame must be hand-drawn-looking 2D ink and matte flat cel 
 
 def production_credentials():
     for name in ("DEEPSEEK_API_KEY", "DEEPSEEK_MODEL", "GEMINI_API_KEY", "GEMINI_VISION_MODEL", "VAST_API_KEY",
-                 "RAGHU_MAX_RENTAL_MINUTES", "RAGHU_MAX_HOURLY_USD", "RAGHU_MAX_JOB_USD"):
+                 "RAGHU_MAX_HOURLY_USD", "RAGHU_MAX_JOB_USD"):
         required(name)
     if key_path := os.getenv("VAST_SSH_KEY_PATH"):
         if not Path(key_path).is_file():

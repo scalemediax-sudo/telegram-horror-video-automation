@@ -424,22 +424,19 @@ def _rent_once(folder, ident, check, *, progress, image_only=False, pending_shot
                 key.write_text(required("VAST_SSH_PRIVATE_KEY").replace("\\n", "\n").strip() + "\n",
                                encoding="ascii", newline="\n")
                 key.chmod(0o600)
-            # Reuse the original deadline so resuming does not authorize a longer rental.
-            minutes = int(required("RAGHU_MAX_RENTAL_MINUTES"))
-            if pending_shots is not None:
-                minutes = min(minutes, 25 + (pending_shots * 7 + 5) // 6)
-            expires = previous.get("expires", previous["started"] + minutes * 60)
-            if recovery_state.get("user_recovery") and previous.get("stopped_at"):
-                # Keep the original compute allowance while the instance was stopped.
-                expires += max(0, time.time() - previous["stopped_at"])
-                previous = {**previous, "expires": expires}
-            if resume_seconds and previous.get("saved_frame_window") != resume_window:
+            remaining = float("inf")
+            if resume_seconds:
                 if type(resume_seconds) is not int or not 120 <= resume_seconds <= 3600:
                     raise RuntimeError("The saved-frame rental window is invalid.")
-                expires = time.time() + resume_seconds
-                previous = {**previous, "expires": expires, "saved_frame_window": resume_window}
+                if previous.get("saved_frame_window") != resume_window or "expires" not in previous:
+                    previous.update(expires=time.time() + resume_seconds, saved_frame_window=resume_window)
+                    store.save(journal, previous)
+                remaining = previous["expires"] - time.time()
+            elif "expires" in previous:
+                # Normal production resumes ignore deadlines saved by older deployments.
+                previous.pop("expires")
+                previous.pop("saved_frame_window", None)
                 store.save(journal, previous)
-            remaining = expires - time.time()
             if remaining < 120:
                 raise RuntimeError(f"Vast instance {previous['id']} remains stopped. The original rental window expired.")
             rows = instances()
@@ -467,15 +464,9 @@ def _rent_once(folder, ident, check, *, progress, image_only=False, pending_shot
     hf_token = None if image_only or model == "wan22" else required("HF_TOKEN")
     if hf_token:
         check_model_access(models, hf_token)
-    minutes = int(required("RAGHU_MAX_RENTAL_MINUTES"))
-    if image_only:
-        minutes = min(minutes, 25)
-    elif pending_shots is not None:
-        # Allow for a cold start, stills and a few retakes, then scale with remaining motion.
-        estimate_minutes = 25 + pending_shots * 8 if model == "wan22" else 25 + (pending_shots * 7 + 5) // 6
-        if model == "wan22" and estimate_minutes > minutes:
-            raise RuntimeError("The Wan render estimate exceeds the configured rental window. Choose a shorter video.")
-        minutes = min(minutes, estimate_minutes)
+    # This estimate only screens offers. It is never a deadline for a running job.
+    shots = 0 if image_only else (1 if pending_shots is None else pending_shots)
+    estimate_minutes = 25 + (shots * 8 if model == "wan22" else (shots * 7 + 5) // 6)
     download_gb = 20 if image_only else (65 if model == "wan22" else 20 + sum(item["bytes"] for item in models) / 1e9)
     if not image_only and os.getenv("RAGHU_NARRATION_PROVIDER", "").lower() == "chatterbox":
         download_gb += 4
@@ -484,7 +475,7 @@ def _rent_once(folder, ident, check, *, progress, image_only=False, pending_shot
     min_bandwidth = float(os.getenv("RAGHU_MIN_DOWNLOAD_MBPS", "500"))
     excluded_regions = {region.strip().upper() for region in
                         os.getenv("RAGHU_EXCLUDED_GPU_REGIONS", "").split(",") if region.strip()}
-    if not 1 <= minutes <= 720 or not 0 < max_hourly <= 10 or not 0 < cap <= 100 or not 0 < min_bandwidth <= 10000:
+    if not 0 < max_hourly <= 10 or not 0 < cap <= 100 or not 0 < min_bandwidth <= 10000:
         raise RuntimeError("Raghu rental budget variables are invalid.")
     with tempfile.TemporaryDirectory(prefix="raghu-ssh-") as temp_name:
         temp = Path(temp_name)
@@ -511,7 +502,7 @@ def _rent_once(folder, ident, check, *, progress, image_only=False, pending_shot
         credit = float(balance.get("credit", 0))
         query = f"gpu_name={gpu} num_gpus=1 verified=true rentable=true rented=false reliability>=0.98 disk_space>=150"
         def quote(offer):
-            return (float(offer["dph_total"]) * minutes / 60
+            return (float(offer["dph_total"]) * estimate_minutes / 60
                     + float(offer["inet_down_cost"]) * download_gb
                     + float(offer["inet_up_cost"]) * 4)
 
@@ -549,19 +540,17 @@ def _rent_once(folder, ident, check, *, progress, image_only=False, pending_shot
             raise RuntimeError(f"Vast has ${credit:.2f} credit. The lowest eligible rental needs about ${quote(offer):.2f}.")
         started = time.time()
         state.update(rate=offer["dph_total"], gpu=gpu, quantization=quantization, motion_model=model,
-                     offer_id=offer["id"], machine_id=offer.get("machine_id"), started=started,
-                     expires=started + minutes * 60)
+                     offer_id=offer["id"], machine_id=offer.get("machine_id"), started=started)
         check()
         store.save(journal, state)
         try:
-            deadline = time.monotonic() + minutes * 60
             created = vast("create", "instance", offer["id"], "--image",
                            RUNTIME_IMAGE, "--disk", "150",
                            "--label", state["label"], "--ssh", "--direct", "--cancel-unavail",
                            "--onstart", start)
             state["id"] = int(created["new_contract"])
             store.save(journal, state)
-            ready_until = min(deadline, time.monotonic() + 720)
+            ready_until = time.monotonic() + 720
             running_since = None
             last_reason = "container did not become ready"
             progress("Vast rental created · waiting for container startup", 27)
@@ -576,7 +565,7 @@ def _rent_once(folder, ident, check, *, progress, image_only=False, pending_shot
                     remote = None
                     for reported in (False, True):
                         try:
-                            candidate = Remote(row, key, temp, deadline, check, reported_endpoint=reported)
+                            candidate = Remote(row, key, temp, float("inf"), check, reported_endpoint=reported)
                         except RuntimeError:
                             continue
                         endpoint = (candidate.host, candidate.port)

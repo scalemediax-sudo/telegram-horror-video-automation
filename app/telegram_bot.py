@@ -133,7 +133,7 @@ def recovery_guidance(reason):
                 "Starting a new video uses a new rental and may repeat model downloads.")
     if "rental window expired" in reason or "operation reached its deadline" in reason:
         return ("The rental time ran out. Saved assets are still available. Ask the deployment owner to "
-                "check the remaining budget and rental window before retrying.")
+                "check the failed Vast step before retrying.")
     if "no vast offer" in reason or "no replacement host" in reason or "no different host" in reason:
         return ("No eligible GPU fits the current settings. Try again later, or ask the deployment owner "
                 "to check the hourly, transfer and total budget limits.")
@@ -155,7 +155,7 @@ def recovery_guidance(reason):
 
 def production_setup_text():
     required = ["TELEGRAM_BOT_TOKEN", "TELEGRAM_ALLOWED_USER_IDS", "DEEPSEEK_API_KEY", "DEEPSEEK_MODEL",
-                "GEMINI_API_KEY", "GEMINI_VISION_MODEL", "VAST_API_KEY", "RAGHU_MAX_RENTAL_MINUTES",
+                "GEMINI_API_KEY", "GEMINI_VISION_MODEL", "VAST_API_KEY",
                 "RAGHU_MAX_HOURLY_USD", "RAGHU_MAX_JOB_USD"]
     if os.getenv("RAGHU_MOTION_MODEL", "ltx") == "ltx":
         required.append("HF_TOKEN")

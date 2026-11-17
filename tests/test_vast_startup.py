@@ -78,3 +78,22 @@ def test_preservation_stops_without_destroying(monkeypatch, tmp_path):
     assert calls == [("stop", 42)]
     assert store.read(journal)["recovery_stop"]
     assert not store.read(journal)["destroyed"]
+
+
+def test_production_can_resume_an_expired_legacy_rental(monkeypatch, tmp_path):
+    journal = tmp_path / "raghu-rental.json"
+    state = {"id": 42, "label": "job", "recovery_stop": True, "quantization": "fp8", "expires": 1}
+    store.save(journal, state)
+    row = {"id": 42, "label": "job", "actual_status": "stopped",
+           "public_ipaddr": "192.0.2.10", "ports": {"22/tcp": [{"HostPort": "30022"}]}}
+    monkeypatch.setenv("VAST_SSH_KEY_PATH", str(tmp_path / "key"))
+    monkeypatch.delenv("RAGHU_MAX_RENTAL_MINUTES", raising=False)
+    monkeypatch.setattr(vast, "motion_model", lambda: "ltx")
+    monkeypatch.setattr(vast, "instances", lambda: [row])
+    monkeypatch.setattr(vast.Remote, "restart_preserved", lambda self, state: None)
+    monkeypatch.setattr(vast.Remote, "push", lambda self, paths: None)
+    monkeypatch.setattr(vast, "close_rental", lambda journal, preserve: None)
+
+    with vast.rent(tmp_path, "job", lambda: None) as remote:
+        assert remote.deadline == float("inf")
+        assert "expires" not in store.read(journal)
