@@ -131,9 +131,12 @@ def recovery_guidance(reason):
     if "could not restart" in reason:
         return ("Vast could not start the saved machine. Wait for capacity, then tap Retry this step. "
                 "Starting a new video uses a new rental and may repeat model downloads.")
-    if "rental window expired" in reason or "operation reached its deadline" in reason:
-        return ("The rental time ran out. Saved assets are still available. Ask the deployment owner to "
-                "check the failed Vast step before retrying.")
+    if "rental window expired" in reason:
+        return ("The saved test window expired. The rental disk is still preserved. "
+                "Ask the deployment owner to check the stopped instance.")
+    if "operation reached its deadline" in reason:
+        return ("A Vast step stopped responding in time. Saved assets are still available. "
+                "Ask the deployment owner to check the failed step before retrying.")
     if "no vast offer" in reason or "no replacement host" in reason or "no different host" in reason:
         return ("No eligible GPU fits the current settings. Try again later, or ask the deployment owner "
                 "to check the hourly, transfer and total budget limits.")

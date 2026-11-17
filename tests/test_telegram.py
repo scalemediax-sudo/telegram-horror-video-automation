@@ -58,14 +58,14 @@ def test_raghu_recovery_buttons_retry_only_the_chat_owned_job(service, monkeypat
     assert any(fields.get("text") == tg.DURATION_PROMPT for _, fields, _ in service.api.calls)
 
 
-def test_raghu_status_explains_rental_deadline_and_returns_recovery_buttons(service, monkeypatch):
+def test_raghu_status_explains_operation_timeout_and_returns_recovery_buttons(service, monkeypatch):
     service.handle(update())
     ident = tg.latest(service.bot, 101)["id"]
     store.update(ident, status="failed", error="Vast operation reached its deadline.")
     monkeypatch.setenv("MEDIA_BACKEND", "raghu")
     service.handle(update("/status", ident=2))
     message = service.api.calls[-1][1]
-    assert "rental time ran out" in message["text"]
+    assert "A Vast step stopped responding in time" in message["text"]
     assert message["reply_markup"]["inline_keyboard"][0][0]["callback_data"] == f"retry:{ident}"
 
 
